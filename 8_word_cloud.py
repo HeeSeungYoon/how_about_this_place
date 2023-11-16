@@ -8,8 +8,7 @@ import gdown
 
 from wordcloud import WordCloud
 
-
-LANDMARK_IDX = 23  # -2 in df_all.csv
+LANDMARK_IDX = 707  # landmark in df_all.csv
 
 font_path = 'fonts/malgun.ttf'
 
@@ -28,6 +27,7 @@ if not os.path.isfile('datasets/df_all.csv'):
 
 df = pd.read_csv('datasets/df_all.csv')
 
+print(df.iloc[LANDMARK_IDX, :3])
 words = df.iloc[LANDMARK_IDX, 3].split()
 word_dict = collections.Counter(words)
 word_dict = dict(word_dict)
